@@ -28,11 +28,11 @@ Example:
 */
 
 Array.prototype.groupBy = function(fn) {
-    func = fn ? fn : el => el;
-    newObj = {};
+    var func = fn ? fn : el => el;
+    var newObj = {};
 
     this.forEach(function(item, i, arr) {
-        key = func(item).toString();
+        var key = func(item).toString();
         if(newObj[key]) {
             newObj[key].push(item);
         } else {
