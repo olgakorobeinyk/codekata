@@ -44,7 +44,6 @@ Your work is to implement the construct() function.
 
 function construct(Class) {
   var newObj = Object.create(Class.prototype);
-  var clas = Array.prototype.shift.apply(arguments);
-  clas.apply(newObj, arguments);
+  Class.apply(newObj, Array.prototype.slice.apply(arguments, 1));
   return newObj;
 }
